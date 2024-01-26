@@ -1,0 +1,149 @@
+//====================================================================================================
+.page {
+  // .page__wrap
+
+  &__wrap {
+  }
+}
+.home {
+  // .home__section
+
+  &__section {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+  }
+}
+
+.work {
+  // .work__collection
+
+  &__collection {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+  }
+}
+.grid {
+  // .grid__gallery
+
+  &__gallery {
+    position: absolute;
+    left: 0;
+    top: 0;
+    // transform: translate(-960px, -960px);
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    grid-template-rows: auto;
+    transition: 1.4s ease-out;
+  }
+}
+.collection {
+  // .collection__item
+
+  &__item {
+    position: relative;
+    transition: 0.5s ease-in-out;
+
+    &::before { 
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 2;
+      transition: 0.3s ease-out;
+      opacity: 0;
+    }
+
+    &:hover {
+      transform: scale3d(0.95, 0.95, 1);
+      transform-style: preserve-3d;
+      // filter: brightness(.6);
+      &:before{
+        opacity: .8;
+      }
+    }
+  }
+
+  // .collection__image
+
+  &__image {
+    position: relative;
+    display: flex;
+    height: 100%;
+
+  }
+
+  // .collection__text
+
+  &__text {
+    position: relative;
+    top: 50%;
+    font-family: $fontSecond;
+    font-size: 82px;
+    font-weight: 500;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+}
+.colection {
+  // .colection__mask
+
+  &__mask {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: 0.3s ease-out;
+    z-index: 10;
+
+    &:hover {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
+
+// Preloader //
+#preloader{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  background-color: #0f0f0f;
+  flex-direction: column;
+
+}
+#percent{
+  color: white;
+  font-family: 'Neutral Face';
+}
+#bar{
+  width: 60%;
+  margin-top: 20px;
+}
+#barconfrm{
+  width: 1%;
+  padding: 1px 0px;
+  background-color: white;
+
+}
+
+//====================================================================================================
